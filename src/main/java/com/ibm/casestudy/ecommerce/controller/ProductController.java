@@ -42,7 +42,7 @@ public class ProductController {
 	 * productService.saveCatalogUsingProductId(catalogId); }
 	 */
 	@PostMapping("/saveProduct") 
-	public String saveProduct(@RequestBody Product product) { 
+	public Product saveProduct(@RequestBody Product product) { 
 		return productService.saveProduct(product); 
 	}
 	 

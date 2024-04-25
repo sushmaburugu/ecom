@@ -1,6 +1,5 @@
 package com.ibm.casestudy.ecommerce.service;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,11 +44,11 @@ public class ProductService {
 		return catalog;
 	}
 
-	public String saveProduct(Product product) {
-		if (userRepository.findAll().stream().anyMatch(a -> a.getRole().equalsIgnoreCase("admin"))) {
-			productRepository.save(product);
-			return "product added successfully";
-		}
-		else return "you don't have admin access";
+	public Product saveProduct(Product product) {
+		//if (userRepository.findAll().stream().anyMatch(a -> a.getRole().equalsIgnoreCase("admin"))) {
+		return productRepository.save(product);
+		//	return "product added successfully";
+		//}
+		//else return "you don't have admin access";
 	}
 }

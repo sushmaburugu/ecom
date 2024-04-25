@@ -67,6 +67,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>ecom-product-cloud</finalName>
 	</build>
 
 </project>

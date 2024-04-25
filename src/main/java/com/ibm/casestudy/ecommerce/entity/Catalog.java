@@ -1,14 +1,10 @@
 package com.ibm.casestudy.ecommerce.entity;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,11 +16,9 @@ public class Catalog {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long catalogId;
 	
-	/*
-	 * @ManyToMany
-	 * 
-	 * @JoinTable(name = "product") private List<Product> products;
-	 */
+	@Column(name = "product_id")
+	private Long ProductId;
+	 
 
 	public Long getCatalogId() {
 		return catalogId;
@@ -33,9 +27,13 @@ public class Catalog {
 	public void setCatalogId(Long catalogId) {
 		this.catalogId = catalogId;
 	}
-	/*
-	 * public List<Product> getProducts() { return products; }
-	 * 
-	 * public void setProducts(List<Product> products) { this.products = products; }
-	 */
+
+	public Long getProductId() {
+		return ProductId;
+	}
+
+	public void setProductId(Long productId) {
+		ProductId = productId;
+	}
+	
 }
