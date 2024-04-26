@@ -1,5 +1,7 @@
 package com.ibm.casestudy.ecommerce.entity;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,6 +20,10 @@ public class Catalog {
 	
 	@Column(name = "product_id")
 	private Long ProductId;
+	
+	private String productName;
+	private BigDecimal unitPrice;
+	private String imageUrl;
 	 
 
 	public Long getCatalogId() {
@@ -34,6 +40,30 @@ public class Catalog {
 
 	public void setProductId(Long productId) {
 		ProductId = productId;
+	}
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public BigDecimal getUnitPrice() {
+		return unitPrice;
+	}
+
+	public void setUnitPrice(BigDecimal unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
 	}
 	
 }

@@ -30,20 +30,20 @@ public class ProductController {
 	public Product findById(@PathVariable Long productId) {
 		return productService.findById(productId).get();
 	}
-	
-	@PostMapping("/savecatalog") 
-	public Catalog saveCatalog(@RequestBody Catalog catalog) { 
-		return productService.saveCatalog(catalog); 
+
+	@PostMapping("/savecatalog")
+	public Catalog saveCatalog(@RequestBody Catalog catalog) {
+		return productService.saveCatalog(catalog);
 	}
-	
-	/*
-	 * @PostMapping("/savecatalogUsingProdId") public Catalog
-	 * saveCatalogUsingProductId(@PathVariable Long catalogId) { return
-	 * productService.saveCatalogUsingProductId(catalogId); }
-	 */
-	@PostMapping("/saveProduct") 
-	public Product saveProduct(@RequestBody Product product) { 
-		return productService.saveProduct(product); 
+
+	@PostMapping("/savecatalogUsingProdId/{productId}")
+	public Catalog saveCatalogUsingProductId(@PathVariable Long productId) {
+		return productService.saveCatalogUsingProductId(productId);
 	}
-	 
+
+	@PostMapping("/saveProduct")
+	public Product saveProduct(@RequestBody Product product) {
+		return productService.saveProduct(product);
+	}
+
 }
